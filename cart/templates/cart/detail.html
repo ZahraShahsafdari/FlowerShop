@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block title %} Shopping Cart {% endblock %}
+
+{% block content %}
+    {% load static %}
+
+    <h1>Your Shopping Cart</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Image</th>
+                <th>Product</th>
+                <th>Count</th>
+                <th>Remove</th>
+                <th>Unit Price</th>
+                <th>Product Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in cart %}
+                {% with product=item.product %}
+                    <tr>
+                        <td>
+                            <a href="{{ product.get_absolute_url }}">
+                            <img src="{{ product.image.url }}">
+                            </a>
+                        </td>
+                        <td>{{ product.name }}</td>
+                        <td>
+                            <form method="post" action="{% url 'cart:cart_add' product.id %}">
+                                {{ item.update_product_count_form.product_count }}
+                                {{ item.update_product_count_form.update }}
+                                {% csrf_token %}
+                                <input type="submit" value="Update">
+                            </form>
+                        </td>
+                        <td><a href="{% url 'cart:cart_remove' product.id %}">Remove</a></td>
+                        <td>$ {{ item.price }}</td>
+                        <td>$ {{ item.total_price }}</td>
+                    </tr>
+                        
+                {% endwith %}
+            {% endfor %}
+        </tbody>
+    </table>
+<h3> Total Price: $ {{ cart.get_total_price }}</h3>
+
+</p>
+{% endblock %}
