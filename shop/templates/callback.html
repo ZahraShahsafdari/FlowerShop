@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-{% block title %} Order Detail page {% endblock %}
+{% block title %} Callback page {% endblock %}
 
 {% block content %}
         {% load static %}
@@ -33,10 +33,10 @@
 				<!-- row -->
 				<div class="row">
 					<div class="col-md-12">
-						<h3 class="breadcrumb-header">Order Detail</h3>
+						<h3 class="breadcrumb-header">Callback</h3>
 						<ul class="breadcrumb-tree">
 							<li><a href="#">Home</a></li>
-							<li class="active">Order Detail</li>
+							<li class="active">Callback</li>
 						</ul>
 					</div>
 				</div>
@@ -60,12 +60,9 @@
                         <br>
 						<div class="order-summary">
                             <center>
-                            <p>Your Order Number: {{ order.id }}</p>
+                            <p>Your Invoice Number: {{ invoice.id }}</p>
                             </center>
                         </div>
-                            <center>
-                            <a href="{% url 'shop:to_bank' order.id %}" class="primary-btn order-submit">Online Payment</a>
-                            </center>
 					</div>	                       
 					<!-- /Order Details -->
 				</div>
