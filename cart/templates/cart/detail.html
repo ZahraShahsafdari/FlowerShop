@@ -39,12 +39,17 @@
                         <td>$ {{ item.price }}</td>
                         <td>$ {{ item.total_price }}</td>
                     </tr>
-                        
                 {% endwith %}
             {% endfor %}
+            <tr class="total">
+                <td>Total</td>
+                <td colspan="4"></td>
+                <td class="num">$ {{ cart.get_total_price }}</td>
+            </tr>
         </tbody>
     </table>
-<h3> Total Price: $ {{ cart.get_total_price }}</h3>
-
+<p>
+    <a href="{% url 'shop:store' %}" class="button light">Continue Shopping</a>
+    <a href="{% url 'shop:checkout' %}" class="button light">Checkout</a>
 </p>
 {% endblock %}

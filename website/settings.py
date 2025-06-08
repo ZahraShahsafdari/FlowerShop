@@ -57,7 +57,7 @@ ROOT_URLCONF = 'website.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -130,6 +130,10 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
 CART_SESSION_ID = 'cart'
+
+
+LOGIN_REDIRECT_URL = '/'
+LOGIN_URL = '/login/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
