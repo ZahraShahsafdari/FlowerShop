@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-{% block title %} Checkout page {% endblock %}
+{% block title %} Order Detail page {% endblock %}
 
 {% block content %}
         {% load static %}
@@ -33,10 +33,10 @@
 				<!-- row -->
 				<div class="row">
 					<div class="col-md-12">
-						<h3 class="breadcrumb-header">Checkout</h3>
+						<h3 class="breadcrumb-header">Order Detail</h3>
 						<ul class="breadcrumb-tree">
 							<li><a href="#">Home</a></li>
-							<li class="active">Checkout</li>
+							<li class="active">Order Detail</li>
 						</ul>
 					</div>
 				</div>
@@ -55,37 +55,20 @@
 					<!-- Order Details -->
 					<div class="col-md-12 order-details">
 						<div class="section-title text-center">
-							<h3 class="title">Your Order</h3>
+							<h2 class="title">Thank You!</h2>
 						</div>
+                        <br>
 						<div class="order-summary">
-							<div class="order-col">
-								<div><strong>PRODUCT</strong></div>
-								<div><strong>TOTAL</strong></div>
-							</div>
-							<div class="order-products">
-								{% for item in cart %}
-									<div class="order-col">
-										<div>{{ item.product_count }}X {{ item.product.name }}</div>
-										<div>$ {{ item.total_price }}</div>
-									</div>
-								{% endfor %}
-							</div>
-							<div class="order-col">
-								<div><strong>TOTAL</strong></div>
-								<div><strong class="order-total">$ {{ cart.get_total_price }}</strong></div>
-							</div>
-						</div>
-
-						<div class="input-checkbox">
-							<input type="checkbox" id="terms">
-						</div>
-						<form action="." method="post">
-							{% csrf_token %}
-							<center>
-							<input class="primary-btn order-submit" type="submit" value="Place Order">
-							</center>
-						</form>
-					</div>
+                            <center>
+                            <p>Your Order Number: {{ order.id }}</p>
+                            </center>
+                        </div>
+                        <form action="." method="post">
+                            {% csrf_token %}
+                            <center>
+                            <input class="primary-btn order-submit" value="Online Payment">
+                            </center>
+                        </form>                        
 					<!-- /Order Details -->
 				</div>
 				<!-- /row -->

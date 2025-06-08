@@ -5,6 +5,7 @@
 {% block content %}
     {% load static %}
     <div class="container">
+        <br>
         {% if next %}
             <form action="/login/?next={{ next }}" method="post">
         {% else %}
@@ -22,4 +23,5 @@
             <input type="submit" value="Login">
         </form>
     </div>
+    <br>
 {% endblock %}
