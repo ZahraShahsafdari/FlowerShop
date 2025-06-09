@@ -167,3 +167,6 @@ EMAIL_USE_TLS = True
 EMAIL_PORT = 587
 EMAIL_HOST_USER = 'missshahi89@gmail.com'
 EMAIL_HOST_PASSWORD = 'zara171989'
+
+###978203087779-v52boh6u6if91ck36aroj6v0jbpmqntq.apps.googleusercontent.com
+###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
