@@ -36,7 +36,8 @@ def product(request, pk):
                                             'cart_add_product_form': cart_add_product_form})
 
 def store(request):
-    return render(request, 'store.html')
+    product_list = models.Product.objects.all()
+    return render(request, 'store.html', {'product_list': product_list})
 
 
 
