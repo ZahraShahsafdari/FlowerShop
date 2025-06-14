@@ -39,6 +39,17 @@ def store(request):
     product_list = models.Product.objects.all()
     return render(request, 'store.html', {'product_list': product_list})
 
+def aboutus(request):
+    return render(request, 'aboutus.html')
+
+def contactus(request):
+    return render(request, 'contactus.html')
+
+def search(request):
+    query = request.GET.get('query', '')
+    products = models.Product.objects.filter(name__icontains=query)
+    return render(request, 'search.html', {'products': products, 'query': query})
+
 
 
 merchant = '********************'

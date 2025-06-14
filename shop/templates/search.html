@@ -1,0 +1,112 @@
+{% extends 'base.html' %}
+
+{% block title %} Search Results {% endblock %}
+
+{% block content %}
+        {% load static %}
+
+        <!-- NAVIGATION -->
+        <nav id="navigation">
+            <!-- container -->
+            <div class="container">
+                <!-- responsive-nav -->
+                <div id="responsive-nav">
+                    <!-- NAV -->
+                    <ul class="main-nav nav navbar-nav">
+                        <li class="active"><a href="{% url 'shop:index' %}">Home</a></li>
+                        <li><a href="{% url 'shop:store' %}">Store</a></li>
+                        <li><a href="{% url 'shop:aboutus' %}">About Us</a></li>
+                        <li><a href="{% url 'shop:contactus' %}">Contact Us</a></li>
+                    </ul>
+                    <!-- /NAV -->
+                </div>
+                <!-- /responsive-nav -->
+            </div>
+            <!-- /container -->
+        </nav>
+        <!-- /NAVIGATION -->
+         <!-- BREADCRUMB -->
+		<div id="breadcrumb" class="section">
+			<!-- container -->
+			<div class="container">
+				<!-- row -->
+				<div class="row">
+					<div class="col-md-12">
+						<ul class="breadcrumb-tree">
+							<li><a href="{% url 'shop:index' %}">Home</a></li>
+							<li class="active">Search Results</li>
+						</ul>
+					</div>
+				</div>
+				<!-- /row -->
+			</div>
+			<!-- /container -->
+		</div>
+		<!-- /BREADCRUMB -->
+
+        <!-- SECTION -->
+        <div class="section">
+            <!-- container -->
+            <div class="container">
+                <!-- row -->
+                <div class="row">
+                    <!-- section title -->
+                    <div class="col-md-12">
+                        <div class="section-title">
+                        <h1>Search Results for "{{ query }}"</h1>
+                        <br>
+                        <ul><center>
+                            {% for product in products %}
+                                <li><img src="{{ product.image.url }}" alt=""></li>
+                                <li><h4>{{ product.description }}</h4></li>
+                                <li><h5>price: $ {{ product.price }}</h5></li>
+                            {% empty %}
+                                <li>No products found.</li>
+                            {% endfor %}
+                            </center></ul>
+                        </div>
+                    </div>
+                    <!-- /section title -->
+                </div>
+                <!-- /row -->
+            </div>
+            <!-- /container -->
+        </div>
+        <!-- /SECTION -->
+         
+        <!-- NEWSLETTER -->
+        <div id="newsletter" class="section">
+            <!-- container -->
+            <div class="container">
+                <!-- row -->
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="newsletter">
+                            <p>Sign Up for the <strong>NEWSLETTER</strong></p>
+                            <form>
+                                <input class="input" type="email" placeholder="Enter Your Email">
+                                <button class="newsletter-btn"><i class="fa fa-envelope"></i> Subscribe</button>
+                            </form>
+                            <ul class="newsletter-follow">
+                                <li>
+                                    <a href="#"><i class="fa fa-facebook"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fa fa-twitter"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fa fa-instagram"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fa fa-pinterest"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- /row -->
+            </div>
+            <!-- /container -->
+        </div>
+        <!-- /NEWSLETTER -->
+{% endblock %}

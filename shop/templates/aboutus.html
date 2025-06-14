@@ -1,0 +1,119 @@
+{% extends 'base.html' %}
+
+{% block title %} About Us {% endblock %}
+
+{% block content %}
+        {% load static %}
+
+		<!-- NAVIGATION -->
+		<nav id="navigation">
+			<!-- container -->
+			<div class="container">
+				<!-- responsive-nav -->
+				<div id="responsive-nav">
+					<!-- NAV -->
+					<ul class="main-nav nav navbar-nav">
+						<li><a href="{% url 'shop:index' %}">Home</a></li>
+						<li><a href="{% url 'shop:store' %}">Store</a></li>
+						<li class="active"><a href="{% url 'shop:aboutus' %}">About Us</a></li>
+                        <li><a href="{% url 'shop:contactus' %}">Contact Us</a></li>
+					</ul>
+					<!-- /NAV -->
+				</div>
+				<!-- /responsive-nav -->
+			</div>
+			<!-- /container -->
+		</nav>
+		<!-- /NAVIGATION -->
+
+		<!-- BREADCRUMB -->
+		<div id="breadcrumb" class="section">
+			<!-- container -->
+			<div class="container">
+				<!-- row -->
+				<div class="row">
+					<div class="col-md-12">
+						<ul class="breadcrumb-tree">
+							<li><a href="{% url 'shop:index' %}">Home</a></li>
+							<li class="active">About Us</li>
+						</ul>
+					</div>
+				</div>
+				<!-- /row -->
+			</div>
+			<!-- /container -->
+		</div>
+		<!-- /BREADCRUMB -->
+
+        <!-- SECTION -->
+        <div class="section">
+            <!-- container -->
+            <div class="container">
+                <!-- row -->
+                <div class="row">
+                    <!-- section title -->
+                    <div class="col-md-12">
+                            <p class="text-justify" style="line-height: 2.2">
+                                Simply Flowers Shop offers beautiful, fresh flower arrangements in Tehran. Our expert florists create the perfect
+                                gifts to suit any special occasion. Need flowers delivered across the country? Our trusted network of florists can
+                                deliver nationwide. Simply Flowers Shop also offers same-day delivery services for any last minute gift needs.
+                                Bright, fresh flowers make a thoughtful gift for any type of occasion. From gorgeous anniversary flowers and birthday
+                                flowers to romantic flowers, floral gifts are the perfect way to show just how much you care.
+                                Trust Simply Flowers Shop for local, high-quality flower arrangements like cheerful birthday flowers for your friends
+                                and family or stunning romantic flowers for the one you love. Our expert florists can deliver the perfect floral gift
+                                for any occasion. Browse our website to find the right flowers for your special someone and order online or over the
+                                phone, it couldn't be easier! Simply Flowers Shop will reliably deliver your arrangements to recipients in Tehran or
+                                any other city that you choose.
+                        </p>
+                        <br> <br>
+                        <img src="{% static 'img/pink-garland-clipart-with-transparent-background-37.png' %}" width="100%" />
+                </div>
+                <!-- /row -->
+                </div>
+                <!-- /container -->
+                </div>
+        </div>
+        <!-- /SECTION -->
+	
+        <!-- SECTION -->
+        <div class="section">
+            <!-- container -->
+            <div class="container">
+                <!-- row -->
+                <div class="row">    
+		<!-- NEWSLETTER -->
+		<div id="newsletter" class="section">
+			<!-- container -->
+			<div class="container">
+				<!-- row -->
+				<div class="row">
+					<div class="col-md-12">
+						<div class="newsletter">
+							<p>Sign Up for the <strong>NEWSLETTER</strong></p>
+							<form>
+								<input class="input" type="email" placeholder="Enter Your Email">
+								<button class="newsletter-btn"><i class="fa fa-envelope"></i> Subscribe</button>
+							</form>
+							<ul class="newsletter-follow">
+								<li>
+									<a href="#"><i class="fa fa-facebook"></i></a>
+								</li>
+								<li>
+									<a href="#"><i class="fa fa-twitter"></i></a>
+								</li>
+								<li>
+									<a href="#"><i class="fa fa-instagram"></i></a>
+								</li>
+								<li>
+									<a href="#"><i class="fa fa-pinterest"></i></a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<!-- /row -->
+			</div>
+			<!-- /container -->
+		</div>
+		<!-- /NEWSLETTER -->
+{% endblock %}
