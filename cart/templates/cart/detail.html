@@ -67,18 +67,16 @@
                             </a>
                         </td>
                         <br>
-                        <td>{{ product.name }}</td>
-                        <td>Price: $ {{ item.price }}</td>
-                        <td>Total Price: $ {{ item.total_price }}</td>
-                        <td>
+                        <td style="padding: 5px;">{{ product.name }}</td>
+                        <td style="padding: 5px;">
                             <form method="post" action="{% url 'cart:cart_add' product.id %}">
                                 {{ item.update_product_count_form.product_count }}
                                 {{ item.update_product_count_form.update }}
                                 {% csrf_token %}
-                                <input class="primary-btn order-submit" type="submit" value="Update">
+                                <input style="margin: 3px;" class="primary-btn order-submit" type="submit" value="Update">
                             </form>
                         </td>
-                        <td><a class="primary-btn order-submit" href="{% url 'cart:cart_remove' product.id %}">Remove</a></td>
+                        <td style="padding: 5px;"><a class="primary-btn order-submit" href="{% url 'cart:cart_remove' product.id %}">Remove</a></td>
                     </tr>
                 {% endwith %}
             {% endfor %}
@@ -91,7 +89,7 @@
         </tbody>
     </table>
 <p align="right">
-    <a href="{% url 'shop:store' %}" class="primary-btn order-submit">Continue Shopping</a>
+    <a href="{% url 'shop:store' %}" class="primary-btn order-submit" style="margin: 5px;">Continue Shopping</a>
     <a href="{% url 'shop:checkout' %}" class="primary-btn order-submit">Checkout</a>
 </p>
 {% endblock %}

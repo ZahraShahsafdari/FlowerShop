@@ -9,7 +9,7 @@ from decimal import Decimal
 from zeep import Client
 
 def index(request):
-    product_list = models.Product.objects.all()[:5]
+    product_list = models.Product.objects.all()
     return render(request, 'index.html', {'product_list': product_list})
 
 @login_required

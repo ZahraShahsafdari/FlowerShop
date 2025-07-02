@@ -31,6 +31,8 @@
 
 		<!-- Custom stlylesheet -->
 		<link type="text/css" rel="stylesheet" href="{% static 'css/style.css' %}"/>
+		<link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
 
 		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -50,7 +52,7 @@
 					<ul class="header-links pull-left">
 						<li><a href="#"><i class="fa fa-phone"></i> +98 912 123 4556</a></li>
 						<li><a href="#"><i class="fa fa-envelope-o"></i> MissShahi89@gmail.com</a></li>
-						<li><a href="#"><i class="fa fa-map-marker"></i> Tehran</a></li>
+						<li><a href="#"><i class="fa fa-map-marker"></i> Tehran, Iran</a></li>
 					</ul>
 					<ul class="header-links pull-right">
 						<li><a href="{% url 'shop:login' %}"><i class="fa fa-user-o"></i> My Account</a></li>
@@ -78,7 +80,7 @@
 						<div class="col-md-6">
 							<div class="header-search">
 								<form action="{% url 'shop:search' %}" method="get">
-									<input class="input" type="text" name="query" placeholder="Search here ..." required>
+									<input class="input" type="text" style="width:450px;" name="query" placeholder="Search here ..." required>
 									<button class="search-btn">Search</button>
 								</form>
 							</div>
@@ -91,12 +93,13 @@
 								<!-- Cart -->
 								 {% with total_items=cart|length %}
 								 	{% if cart|length > 0 %}
-										<p style="color: white;">Your Cart:</p>
+										<i class="fa fa-shopping-cart" style="color: white; padding: 3px;"></i>
 										<a style="color: white;" href="{% url 'cart:cart_detail' %}">
 										{{ total_items }} item{{ total_items|pluralize }}, ${{ cart.get_total_price }}
 										</a>
 									{% else %}
-										<p style="color: white;">Empty Cart!</p>
+										<i class="fa fa-shopping-cart" style="color: white; padding:3px"></i>
+										<span style="color: white;">Your Cart</span>
 									{% endif %}
 								{% endwith %}	
 								<!-- /Cart -->
@@ -149,11 +152,11 @@
 							<div class="footer">
 								<h3 class="footer-title">Useful Tips</h3>
 								<ul class="footer-links">
-									<li><a href="#">Flower1</a></li>
-									<li><a href="#">Flower2</a></li>
-									<li><a href="#">Plants</a></li>
-									<li><a href="#">Plant Care</a></li>
-									<li><a href="#">Flower Care</a></li>
+									<li><a href="https://www.euroflorist.be/en/rozenverzorging-cn805">Flower1</a></li>
+									<li><a href="https://www.euroflorist.be/en/verzorging-van-orchideeen-cn896">Flower2</a></li>
+									<li><a href="https://www.euroflorist.be/en/plantenverzorging-cn806 ">Plant Care</a></li>
+									<li><a href="https://www.euroflorist.be/en/bloemenverzorging-cn807">Flower Care1</a></li>
+									<li><a href="#">Flower Care2</a></li>
 
 								</ul>
 							</div>
@@ -165,8 +168,8 @@
 							<div class="footer">
 								<h3 class="footer-title">Information</h3>
 								<ul class="footer-links">
-									<li><a href="#">About Us</a></li>
-									<li><a href="#">Contact Us</a></li>
+									<li><a href="{% url 'shop:aboutus' %}">About Us</a></li>
+									<li><a href="{% url 'shop:contactus' %}">Contact Us</a></li>
 									<li><a href="#">Privacy Policy</a></li>
 									<li><a href="#">Orders and Returns</a></li>
 									<li><a href="#">Terms & Conditions</a></li>
@@ -208,7 +211,9 @@
 								<li><a href="#"><i class="fa fa-cc-amex"></i></a></li>
 							</ul>
 							<span class="copyright">
-								 <a target="_blank" href="https://www.templateshub.net">Templates Hub</a>
+								<p style="color: #fff">
+                        			© 2025 | Simply Flowers Shop by Zahra Shahsafdari
+                    			</p>
 							</span>
 						</div>
 					</div>
@@ -227,6 +232,6 @@
 		<script src="{% static 'js/nouislider.min.js' %}"></script>
 		<script src="{% static 'js/jquery.zoom.min.js' %}"></script>
 		<script src="{% static 'js/main.js' %}"></script>
-
+		<script src="{% static 'js/scripts.js' %}"></script>
 	</body>
 </html>
