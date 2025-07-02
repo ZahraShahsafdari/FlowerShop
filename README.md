@@ -1,1 +1,1 @@
-This is a flower shop website, using django, sqlite and a modified bootstrap template on vs code environment.
+This is a flower shop website developed using Django, SQLite, and a customized Bootstrap template, all within a VS Code environment.
