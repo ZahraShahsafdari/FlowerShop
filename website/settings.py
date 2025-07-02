@@ -20,7 +20,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-))idp)e3h^o(@tjmp%-g=ljvxw&4$606vx5q%5qdx#x9zik4-^'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -91,7 +90,6 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'shoppingdb',
         'USER': 'postgres',
-        'PASSWORD': 'z17s1989',
         'HOST': 'localhost',
         'PORT': '5432',
     }
@@ -165,5 +163,4 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_USE_TLS = True
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'missshahi89@gmail.com'
 EMAIL_HOST_PASSWORD = 'zara171989'
